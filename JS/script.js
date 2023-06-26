@@ -22,10 +22,10 @@ window.addEventListener("load", ()=> {
             event.preventDefault();
             switch (key) {
                 case "ArrowLeft":
-                    game.player.directionX = -1;
+                    game.player.directionX = -3;
                     break
                 case "ArrowRight":
-                    game.player.directionX = 1;    
+                    game.player.directionX = 3;    
             }
             console.log(game.player.directionX);
         }
@@ -46,4 +46,5 @@ window.addEventListener("load", ()=> {
           }
         }
     });
+
 });

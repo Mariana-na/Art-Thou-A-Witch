@@ -6,7 +6,7 @@ class Game {
       this.height = 600
       this.width = 500
       this.player = new Player ( this.gameScreen, 210, 515, 90, 120);
-      this.obstacles = []
+      this.obstacles = [new Obstacles(this.gameScreen)]
       this.isGameOver = false
       this.animateId
     }
