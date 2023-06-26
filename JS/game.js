@@ -5,7 +5,7 @@ class Game {
       this.gameEndScreen = document.getElementById('gameOver')
       this.height = 600
       this.width = 500
-      this.player = null
+      this.player = new Player ( this.gameScreen, 200, 475, 100, 150);
       this.obstacles = []
       this.isGameOver = false
       this.animateId
@@ -23,7 +23,6 @@ class Game {
     gameLoop() {
         console.log("in the game loop");
     
-        // Interrupt the function to stop the loop if "gameIsOver" is set to "true"
         if (this.gameIsOver) {
           return;
         }
