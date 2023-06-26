@@ -6,34 +6,34 @@
     </head>
     <body>
         <main>
-            <div class = "startScreen">
-                <!-- Add image link -->
-                <img src="" alt="Spanish Inquisition">
+            <div id = "startScreen">
+                <img id = "SI" src="./styles/images/SIStart-Overcut.png" alt="Spanish Inquisition">
                 <br>
-                <!-- Add image link -->
-                <img src="" alt="Witch">
-                <p>storyline...</p>
-                <button class = "startBtn"> Start </button>
+                <p>It's 1525 and the Spanish Inquisition has sent hoards of their most ardent benefactors to Navarra.</p>
+                <p>I was out practicing my spells and must now return home to hide my potions and wicked artefacts before they come search it.</p>
+                <p>Oh no! I forgot my broom!</p>
+                <p>Guess I'll have to walk... I must move carefully! If I so much as touch an inquisitioner, my magic will be felt and I will be put on trial for witchcraft!</p>
+                <img id = "startWitch" src="./styles/images/startWitchcut.png" alt="Witch">
+                <br>
+                <button id = "startBtn"> Start </button>
                 <p>&larr; Arrow : Move Left</p>
                 <p>&rarr; Arrow : Move Right</p>
             </div>
 
             <!-- hide w/CSS disply:none -->
-            <div class = "gameScreen">
-                <span class = "obstaclesPassed">0</span>
+            <div id = "gameScreen">
+                <span id = "obstaclesPassed">0</span>
             </div>
 
 
             <!--hide w/CSS display:none -->
-            <div class = "gameOver">
-                <!-- Add image link -->
-                <img src="" alt="Spanish Inquisition">
+            <div id = "gameOver">
+                <img id = "SiOver" src="./styles/images/SIStart-Overcut.png" alt="Spanish Inquisition">
                 <p> Game Over </p>
-                <p> Score: <span class = "obstaclesPassed">0</span></p>
-                <!-- Add image link -->
-                <img src="" alt="burningWitch">
+                <p> Score: <span id = "obstaclesPassed">0</span></p>
+                <img id = "gmWitch" src="./styles/images/GameOvercut.png" alt="burningWitch">
                 <br>
-                <button class = "reStartBtn"> Do a Pact With the Devil to Resurect</button>
+                <button id = "reStartBtn"> Use your Powers to Resurrect and Try Again</button>
             </div>
         </main>
 

@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  #startScreen {
+    padding: 20px 0px;
+  }
+
+  #SI{
+    height: 150px;
+    width: 200px;
+  }
+
+  #startWitch {
+    height: 150px;
+    width: 150px;
+  }
+
+  #gameScreen {
+    display: none;
+    align-content: center;
+    padding: 20px 0px;
+    overflow: hidden;
+    position: relative;
+    background-image: url(./images/background.jpg);
+    background-size: cover;
+    animation: slide 10s linear infinite forwards; /* FIX HICCUP*/
+    width: 600px;
+    height: 700px;
+  }
+
+  @keyframes slide {
+    0% {
+      background-position: 0 100%;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+
+  #obstaclesPassed {
+    /**/
+  }
+
+  #gameOver {
+    display: none;
+  }
