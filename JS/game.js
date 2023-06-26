@@ -5,7 +5,7 @@ class Game {
       this.gameEndScreen = document.getElementById('gameOver')
       this.height = 600
       this.width = 500
-      this.player = new Player ( this.gameScreen, 200, 475, 100, 150);
+      this.player = new Player ( this.gameScreen, 210, 515, 90, 120);
       this.obstacles = []
       this.isGameOver = false
       this.animateId
@@ -17,7 +17,7 @@ class Game {
         this.startScreen.style.display = "none";
         this.gameScreen.style.display = "block";
 
-        this.gameloop();
+        this.gameLoop();
     }
 
     gameLoop() {
@@ -34,5 +34,6 @@ class Game {
     
       update() {
         console.log("in the update");
+        this.player.move();
       }
 }

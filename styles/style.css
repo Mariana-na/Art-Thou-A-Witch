@@ -40,9 +40,9 @@ body {
     }
   }
 
-  #obstaclesPassed {
-    /**/
-  }
+  /*#obstaclesPassed {
+    
+  }*/
 
   #gameOver {
     display: none;

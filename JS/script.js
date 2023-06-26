@@ -12,4 +12,38 @@ window.addEventListener("load", ()=> {
     startBtn.addEventListener("click", function (){
         startGame();
     });
+
+
+    document.addEventListener("keydown", event => {
+        const key = event.key;
+        const possibleKeyStrokes = ["ArrowLeft", "ArrowRight"];
+
+        if(possibleKeyStrokes.includes(key)){
+            event.preventDefault();
+            switch (key) {
+                case "ArrowLeft":
+                    game.player.directionX = -1;
+                    break
+                case "ArrowRight":
+                    game.player.directionX = 1;    
+            }
+            console.log(game.player.directionX);
+        }
+
+    })
+
+
+    document.addEventListener('keyup', event => {
+        const key = event.key
+        const possibleKeystrokes = ['ArrowLeft','ArrowRight']
+  
+        if (possibleKeystrokes.includes(key)) {
+          switch (key) {
+            case 'ArrowLeft':
+            case 'ArrowRight':
+              game.player.directionX = 0
+              break
+          }
+        }
+    });
 });
