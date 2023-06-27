@@ -5,8 +5,8 @@ class Game {
       this.gameEndScreen = document.getElementById('gameOver')
       this.height = 600
       this.width = 500
-      this.player = new Player ( this.gameScreen, 210, 515, 90, 120);
-      this.obstacles = [new Obstacles(this.gameScreen)]
+      this.player = new Player ( this.gameScreen, 210, 515, 80, 120);
+      this.obstacles = [];
       this.isGameOver = false
       this.animateId
     }
@@ -20,13 +20,14 @@ class Game {
         this.gameLoop();
     }
 
+
     gameLoop() {
         console.log("in the game loop");
     
         if (this.gameIsOver) {
           return;
         }
-    
+
         this.update();
 
         if (Math.random() > 0.99) {
@@ -35,6 +36,7 @@ class Game {
         window.requestAnimationFrame(() => this.gameLoop());
       }
     
+
       update() {
         console.log("in the update");
         this.player.move();

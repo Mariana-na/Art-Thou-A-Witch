@@ -22,10 +22,10 @@ window.addEventListener("load", ()=> {
             event.preventDefault();
             switch (key) {
                 case "ArrowLeft":
-                    game.player.directionX = -3;
+                    game.player.directionX = -5;
                     break
                 case "ArrowRight":
-                    game.player.directionX = 3;    
+                    game.player.directionX = 5;    
             }
             console.log(game.player.directionX);
         }

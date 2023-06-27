@@ -50,5 +50,5 @@ class Player {
         this.element.style.top = `${this.top}px`;
     }
 
-    /*FIGURE OUT HOW TO HANDLE COLLISIONS AND GAME LOSS*/
+
 }
