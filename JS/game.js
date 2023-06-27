@@ -28,12 +28,23 @@ class Game {
         }
     
         this.update();
-    
+
+        if (Math.random() > 0.99) {
+          this.obstacles.push(new Obstacles(this.gameScreen));
+          }
         window.requestAnimationFrame(() => this.gameLoop());
       }
     
       update() {
         console.log("in the update");
         this.player.move();
+        this.obstacles.forEach((obstacle, i) =>{
+          obstacle.move()
+          if(obstacle.top > 700){
+            this.obstacles.splice(i, 1);
+
+          }
+          console.log(i);
+        })
       }
 }

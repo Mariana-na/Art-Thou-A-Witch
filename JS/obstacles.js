@@ -2,12 +2,13 @@ class Obstacles {
     constructor (gameScreen){
         this.gameScreen = gameScreen;
         this.left = 30;
-        this.top = 0;
+        this.top = -150;
         this.width = 450;
         this.height = 150;
 
         this.element = document.createElement("img");
         this.element.src = "./styles/images/SIObstaclescut.png";
+        
         this.element.style.position = "absolute";
 
         this.element.style.width = `${this.width}px`;
@@ -17,5 +18,14 @@ class Obstacles {
 
     
         this.gameScreen.appendChild(this.element);
+    }
+    move (){
+        this.top += 3;
+
+        this.updatePosition()
+    }
+    updatePosition (){
+        this.element.style.left = `${this.left}px`;
+        this.element.style.top = `${this.top}px`;
     }
 }
