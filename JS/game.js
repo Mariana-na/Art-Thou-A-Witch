@@ -9,6 +9,10 @@ class Game {
       this.obstacles = [];
       this.isGameOver = false;
       this.animateId
+      this.obstacleTimer = null;
+      this.timer = null;
+      this.timePassed = 0;
+      this.obstacleInterval = 3000;
     }
     start (){
         this.gameScreen.style.width = `${this.width}px`;
@@ -16,6 +20,24 @@ class Game {
 
         this.startScreen.style.display = "none";
         this.gameScreen.style.display = "block";
+
+        this.timer = setInterval (() => {
+          this.timePassed += 1;
+
+          if(this.timePassed % 10 === 0) {
+            this.obstacleInterval -= 250;
+            clearInterval(this.obstacleTimer);
+            this.obstacleTimer = setInterval (() => {
+              this.obstacles.push(new Obstacles (this.gameScreen));
+            }, this.obstacleInterval);
+          }
+        }, 1000);
+
+        
+        this.obstacleTimer = setInterval(() => {
+            this.obstacles.push(new Obstacles(this.gameScreen));
+          }, this.obstacleInterval);
+
 
         this.gameLoop();
     }
@@ -26,15 +48,16 @@ class Game {
     
         if (this.isGameOver) {
           console.log("GameOver");
+          clearInterval(this.obstacleTimer);
         } else {
           window.requestAnimationFrame(() => this.gameLoop());
         }
 
         this.update();
 
-        if (Math.random() > 0.99 && this.obstacles.length < 1) {
+        /* if (Math.random() > 0.99 && this.obstacles.length < 1) {
           this.obstacles.push(new Obstacles(this.gameScreen));
-          }
+          } */
       }
     
 

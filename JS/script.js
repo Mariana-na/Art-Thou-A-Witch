@@ -6,6 +6,8 @@ window.addEventListener("load", ()=> {
     function startGame (){
         console.log("start game");
         game = new Game();
+        clearInterval(game.timer);
+        game.timePassed = 0;
         game.start();
     }
 
@@ -53,6 +55,19 @@ window.addEventListener("load", ()=> {
         game.gameScreen.style.display = "block"; // Show game screen
         
         game.gameScreen.removeChild(game.player.element);
+        game.obstacles.forEach(obstacle => {
+            game.gameScreen.removeChild(obstacle.element);
+          });
+        game.obstacles = [];
+
+        game.isGameOver = false;
+        game.timePassed = 0;
+        game.obstacleInterval = 3000;
+
+        clearInterval(game.timer);
+        clearInterval(game.obstacleTimer);
+
+
 
         startGame();
     });
