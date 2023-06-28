@@ -47,4 +47,14 @@ window.addEventListener("load", ()=> {
         }
     });
 
+
+    restartBtn.addEventListener("click", function (){
+        game.gameEndScreen.style.display = "none"; // Hide game over screen
+        game.gameScreen.style.display = "block"; // Show game screen
+        
+        game.gameScreen.removeChild(game.player.element);
+
+        startGame();
+    });
+
 });

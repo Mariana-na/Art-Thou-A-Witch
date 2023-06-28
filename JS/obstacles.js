@@ -1,18 +1,89 @@
 class Obstacles {
     constructor (gameScreen){
         this.gameScreen = gameScreen;
-        this.left = 30;
-        this.top = -150;
+        this.left = 0;
+        this.top = 0;
         this.width = 450;
-        this.height = 150;
-        this.gapWidth = 75;
-        this.gapPosition = Math.floor(Math.random() * (this.width - this.gapWidth)/70) *70;
+        this.height = 125;
+        this.imagewidth = 75;
+/*
+        this.heightEl1 = 125;
+        this.widthEl1 = 75;
+
+        this.heightEl2 = 125;
+        this.widthEl2 = 75;
+
+        this.heightEl3 = 125;
+        this.widthEl3 = 75;
+
+        this.heightEl4 = 125;
+        this.widthEl4 = 75;
+
+        this.heightEl5 = 125;
+        this.widthEl5 = 75;
+
+        this.heightEl6 = 125;
+        this.widthEl6 = 75; */
 
 
-        this.element = document.createElement("img");
-        this.element.src = "./styles/images/less_SI.png";
-
+        this.element = document.createElement("div");
         this.element.style.position = "absolute";
+
+        this.Imgelement1 = document.createElement("img");
+        this.Imgelement2 = document.createElement("img");
+        this.Imgelement3 = document.createElement("img");
+        this.Imgelement4 = document.createElement("img");
+        this.Imgelement5 = document.createElement("img");
+        this.gapElement = document.createElement("div");
+
+        this.Imgelement1.src = "./styles/images/SI_I.png";
+       // this.Imgelement1.style.height = `${this.heightEl1}px`;
+        this.Imgelement1.style.width = `${this.imagewidth}px`;
+
+        this.Imgelement2.src = "./styles/images/SI_I.png";
+        //this.Imgelement2.style.height = `${this.heightEl2}px`;
+        this.Imgelement2.style.width = `${this.imagewidth}px`;
+
+        this.Imgelement3.src = "./styles/images/SI_I.png";
+        //this.Imgelement3.style.height = `${this.heightEl3}px`;
+        this.Imgelement3.style.width = `${this.imagewidth}px`;
+
+        this.Imgelement4.src = "./styles/images/SI_I.png";
+        //this.Imgelement4.style.height = `${this.heightEl4}px`;
+        this.Imgelement4.style.width = `${this.imagewidth}px`;
+
+        this.Imgelement5.src = "./styles/images/SI_I.png";
+       // this.Imgelement5.style.height = `${this.heightEl5}px`;
+        this.Imgelement5.style.width = `${this.imagewidth}px`;
+
+        this.gapElement.style.backgroundColor = "transparent";
+        //this.gapElement.style.height = `${this.heightEl6}px`;
+        //this.gapElement.style.width = `${this.widthEl6}px`;
+        this.gapElement.style.display = "block";
+
+
+        this.element.style.display = "grid";
+        this.element.style.gridTemplateColumns = "repeat(6, 75px)";
+        this.element.style.gridTemplateRows = "125px";
+        this.element.style.gap = "0px";
+
+
+        const swapIndex = Math.floor(Math.random() * 5) + 1;
+
+        this.gapElement.style.gridColumnStart = swapIndex;
+        this[`Imgelement${swapIndex}`].style.gridColumnStart = 6;
+
+        this.element.style.gridAutoFlow = "column"
+
+        
+
+
+        this.element.appendChild(this.Imgelement1);
+        this.element.appendChild(this.Imgelement2);
+        this.element.appendChild(this.Imgelement3);
+        this.element.appendChild(this.Imgelement4);
+        this.element.appendChild(this.Imgelement5);
+        this.element.appendChild(this.gapElement);
 
         this.element.style.width = `${this.width}px`;
         this.element.style.height = `${this.height}px`;
@@ -20,18 +91,8 @@ class Obstacles {
         this.element.style.top = `${this.top}px`;
 
 
-        this.elementGap = document.createElement("span");
-        this.elementGap.style.position = "absolute";
-        this.elementGap.style.backgroundColor = "white";
-
-        this.elementGap.style.width = `100px`;
-        this.elementGap.style.height = `${this.height}px`;
-        this.elementGap.style.top = `${this.top}px`;
-        this.elementGap.style.left = `${this.left}px`;
-
     
         this.gameScreen.appendChild(this.element);
-        this.gameScreen.appendChild(this.elementGap);
     }
     move (){
         this.top += 3;
@@ -43,7 +104,6 @@ class Obstacles {
         this.element.style.left = `${this.left}px`;
         this.element.style.top = `${this.top}px`;
 
-        this.elementGap.style.left = `${this.left + this.gapPosition}px`;
-        this.elementGap.style.top = `${this.top}px`;
     }
+
 }

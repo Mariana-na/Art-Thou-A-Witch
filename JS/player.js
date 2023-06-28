@@ -24,8 +24,8 @@ class Player {
         this.left += this.directionX;
         this.top += this.directionY;
 
-        if (this.left < 10){
-            this.left = 10;
+        if (this.left < 0){
+            this.left = 0;
         }
 
         if(this.top < 10){
@@ -33,8 +33,8 @@ class Player {
         }
 
         //Right side;
-        if(this.left > this.gameScreen.offsetWidth - this.width - 10){
-            this.left = this.gameScreen.offsetWidth - this.width -10;
+        if(this.left > this.gameScreen.offsetWidth - this.width - 0){
+            this.left = this.gameScreen.offsetWidth - this.width -0;
         }
 
         //Bottom side;
@@ -51,4 +51,29 @@ class Player {
     }
 
 
+    didCollide (obstacle){
+        const playerRect = this.element.getBoundingClientRect();
+        const gapRect = obstacle.gapElement.getBoundingClientRect();
+        const obstacleRect = obstacle.element.getBoundingClientRect();
+
+        //collision w/Obstacle
+        if(playerRect.left < obstacleRect.right &&
+            playerRect.right > obstacleRect.left &&
+            playerRect.top < obstacleRect.bottom &&
+            playerRect.bottom > obstacleRect.top            
+            ) { 
+                //collision w/gap
+             if (playerRect.left < gapRect.right &&
+                playerRect.right > gapRect.left &&
+                playerRect.top < gapRect.bottom &&
+                playerRect.bottom > gapRect.top 
+                ){ console.log("Safe")
+                    return false;
+            } else { console.log("Witch Trial"); return true;
+            }
+        }
+        return false;        
+    } 
+
 }
+

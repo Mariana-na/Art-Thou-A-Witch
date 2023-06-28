@@ -49,3 +49,13 @@ body {
   #gameOver {
     display: none;
   }
+
+  #SiOver {
+    height: 155px;
+    width: 200px;
+  }
+
+  #goWitch {
+    height: 200px;
+    width: 190px;
+  }
