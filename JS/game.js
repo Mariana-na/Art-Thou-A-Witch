@@ -13,6 +13,7 @@ class Game {
       this.timer = null;
       this.timePassed = 0;
       this.obstacleInterval = 3000;
+      this.score = 0;
     }
     start (){
         this.gameScreen.style.width = `${this.width}px`;
@@ -43,6 +44,7 @@ class Game {
     }
 
 
+
     gameLoop() {
         console.log("in the game loop");
     
@@ -53,11 +55,9 @@ class Game {
           window.requestAnimationFrame(() => this.gameLoop());
         }
 
-        this.update();
 
-        /* if (Math.random() > 0.99 && this.obstacles.length < 1) {
-          this.obstacles.push(new Obstacles(this.gameScreen));
-          } */
+
+        this.update();
       }
     
 
@@ -65,14 +65,15 @@ class Game {
         console.log("in the update");
         this.player.move();
 
-        let isCollision = false; 
-
         this.obstacles.forEach((obstacle, i) =>{
           obstacle.move()
           if(obstacle.top > 700){
             this.obstacles.splice(i, 1);
-
           }
+/*          if (obstacle.top > this.player.bottom){
+            this.score +=
+          }
+*/
           console.log(i);
           
 
