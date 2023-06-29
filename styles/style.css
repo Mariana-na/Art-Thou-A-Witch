@@ -4,19 +4,170 @@ body {
     text-align: center;
   }
   
+/*
+  @font-face {
+    font-family: 'Rocher';
+    src: url(https://assets.codepen.io/9632/RocherColorGX.woff2);
+  } */
+
+  
+
   #startScreen {
-    padding: 20px 0px;
+    align-content: center;
+    margin-top: 10px;
+    margin-bottom: 60px;
+    margin-left: 60px;
+    margin-right: 60px;
+    height: 800px;
+    /*background-color: #E0C3DE;*/
+    background-image: url(./images/1314645.jpg);
+    background-size: cover;
+    background-position: -350px 0px;
+    border: 2px solid black;
+  }
+
+
+
+
+  #title{
+    font-size: 70px;
+    margin: 0;
+    /*font-family: "Rocher", sans-serif;*/
+    position: relative;
+    top: 40px;
+    right:0;
+    color: rgb(3, 3, 88);
+    -webkit-text-stroke: 0.7px white; /*text-stroke might not work in all browsers. It works in Chrome and Firefox.*/
+
+  }
+
+  #storyContainer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 20px;
+    position: relative;
+    top: -100px;
+  }
+
+
+  #storyline {
+    margin-right: 70px;
+    margin-left: 70px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    padding: 0;
+    width: 500px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 20px;
+    font-weight:500;
+  }
+
+  .p1 {
+    text-indent: 70px;
+    margin-top: 45px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .p2 {
+    text-indent: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .p3 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .p4{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .p5 {
+    margin-top: 5px;
+    margin-bottom: 45px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  #letraI{
+    position: relative;
+    z-index: 2;
+    top: 45px;
+    right: 260px;
+    height: 70px;
+    width: 60px;
   }
 
   #SI{
-    height: 155px;
-    width: 200px;
+    height: 170px;
+    width: 250px;
+    position: relative;
+    z-index: 1;
+    top: -210px;
+    right: -220px;
+   /* top: 380px;
+    right: -310px; */
   }
 
   #startWitch {
-    height: 160px;
-    width: 150px;
+    height: 200px;
+    width: 190px;
+    position: relative;
+    z-index: 1;
+    top: 65px;
+    right: 200px;
+   /* top: -550px;
+    right: 230px; */
   }
+
+  #startBtn {
+    position:relative;
+    top: -345px;
+    right: 0px;
+    margin-top: 10px;
+    margin-bottom: 100px;
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 3px;
+    border: 1px;
+    background: linear-gradient( #cf60cc, #e5aae4);
+
+  }
+
+  #arrowContainer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items:center;
+    margin: 20px;
+    position: relative;
+    top: -360px;
+  }
+
+  #arrowBox{
+    background-color: white;
+    width: 350px;
+    height: 30px;
+    font-size: 17px;
+    border-radius: 5px;
+    border: 2px solid black;
+  }
+  #arrowBox p {
+    margin-top: 5px;
+  }
+
+
+
+/*-----------------------------------------------------------GAME SCREEN--------------------------------------------------------------*/
 
   #gameScreen {
     display: none;
@@ -29,6 +180,8 @@ body {
     animation: slide 10s linear infinite forwards; /* FIX HICCUP*/
     width: 600px;
     height: 700px;
+    right: -400px;
+    border: 2px solid black;
   }
 
   @keyframes slide {
@@ -40,22 +193,78 @@ body {
     }
   }
 
-  
+  #obstaclesPassed {
+    font-size: 20px;
+    color: white;
+    -webkit-text-stroke: 0.7px black;
+    font-weight: bolder;
+  }
 
-  /*#obstaclesPassed {
-    
-  }*/
+  
+/*-----------------------------------------------------------GAME OVER SCREEN--------------------------------------------------------------*/
 
   #gameOver {
     display: none;
+    margin-top: 10px;
+    margin-bottom: 60px;
+    margin-left: 60px;
+    margin-right: 60px;
+    background-image: url("./images/1314645.jpg");
+    background-size: cover;
+    background-position: -350px 0px;
+    border: 2px solid black;
+  }
+
+  #gameOver h1{
+    font-size: 60px;
+    text-decoration: underline;
+    margin: 10px;
+    color: black;
+    font-weight: lighter;
+
+  }
+  #obstaclesPassedGO {
+    font-size: 30px;
+    margin-top: 15px;
+  }
+
+  #boxContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+  }
+
+  #box {
+    background-color: white;
+    padding: 10px; 
+    border-radius: 3px;
+    width: 215px;
+    height: 200px;
+    border: 2px solid black;
+    
   }
 
   #SiOver {
-    height: 155px;
-    width: 200px;
+    height: 235px;
+    width: 300px;
+    margin: 20px;
   }
 
   #goWitch {
-    height: 200px;
-    width: 190px;
+    height: 370px;
+    width: 340px;
+    margin: 10px;
+  }
+
+  #reStartBtn {
+    margin-top: 10px;
+    margin-bottom: 100px;
+    width: 330px;
+    height: 30px;
+    font-size: 15px;
+    border-radius: 3px;
+    border: 1px;
+    background-color: white;
+    background: linear-gradient( #cf60cc, #e5aae4);
   }

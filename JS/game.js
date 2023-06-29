@@ -5,7 +5,7 @@ class Game {
       this.gameEndScreen = document.getElementById('gameOver')
       this.height = 600
       this.width = 450
-      this.player = new Player ( this.gameScreen, 185, 515, 80, 120);
+      this.player = new Player ( this.gameScreen, 185, 515, 90, 120);
       this.obstacles = [];
       this.isGameOver = false;
       this.animateId
@@ -50,7 +50,7 @@ class Game {
     }
     updateScoreDisplay() {
       this.scoreElement.textContent = `${this.score}`;
-      this.scoreElementGO.textContent = `${this.score}`;
+      this.scoreElementGO.textContent = `Score: ${this.score}`;
     }
 
 

@@ -6,24 +6,7 @@ class Obstacles {
         this.width = 450;
         this.height = 125;
         this.imagewidth = 75;
-/*
-        this.heightEl1 = 125;
-        this.widthEl1 = 75;
-
-        this.heightEl2 = 125;
-        this.widthEl2 = 75;
-
-        this.heightEl3 = 125;
-        this.widthEl3 = 75;
-
-        this.heightEl4 = 125;
-        this.widthEl4 = 75;
-
-        this.heightEl5 = 125;
-        this.widthEl5 = 75;
-
-        this.heightEl6 = 125;
-        this.widthEl6 = 75; */
+        this.gapwidth = 40;
 
 
         this.element = document.createElement("div");
@@ -58,7 +41,7 @@ class Obstacles {
 
         this.gapElement.style.backgroundColor = "transparent";
         //this.gapElement.style.height = `${this.heightEl6}px`;
-        //this.gapElement.style.width = `${this.widthEl6}px`;
+        this.gapElement.style.width = `${this.gapwidth}px`;
         this.gapElement.style.display = "block";
 
 
