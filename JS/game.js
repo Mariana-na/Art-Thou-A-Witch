@@ -14,6 +14,8 @@ class Game {
       this.timePassed = 0;
       this.obstacleInterval = 3000;
       this.score = 0;
+      this.scoreElement = document.getElementById("obstaclesPassed");
+      this.scoreElementGO = document.getElementById("obstaclesPassedGO");
     }
     start (){
         this.gameScreen.style.width = `${this.width}px`;
@@ -43,6 +45,13 @@ class Game {
         this.gameLoop();
     }
 
+    getScore(){
+      return this.score;
+    }
+    updateScoreDisplay() {
+      this.scoreElement.textContent = `${this.score}`;
+      this.scoreElementGO.textContent = `${this.score}`;
+    }
 
 
     gameLoop() {
@@ -58,7 +67,9 @@ class Game {
 
 
         this.update();
+
       }
+
     
 
       update() {
@@ -70,21 +81,21 @@ class Game {
           if(obstacle.top > 700){
             this.obstacles.splice(i, 1);
           }
-/*          if (obstacle.top > this.player.bottom){
-            this.score +=
-          }
-*/
           console.log(i);
-          
 
+          if(this.player.didCollideGap(obstacle)){
+            this.score += 1;
+            console.log("Score", this.score);
+          }
+
+          this.updateScoreDisplay(); 
+          
           if (this.player.didCollide(obstacle)) {
             console.log("GameOver");
             this.gameScreen.style.display = "none";
             this.gameEndScreen.style.display = "block";
           }
         });
-    
-
  
       
       }

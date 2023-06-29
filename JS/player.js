@@ -69,11 +69,24 @@ class Player {
                 playerRect.bottom > gapRect.top 
                 ){ console.log("Safe")
                     return false;
+                 
             } else { console.log("Witch Trial"); return true;
             }
         }
         return false;        
     } 
+
+    didCollideGap(obstacle) {
+        const playerRect = this.element.getBoundingClientRect();
+        const gapRect = obstacle.gapElement.getBoundingClientRect();
+    
+        return (
+          playerRect.left < gapRect.right &&
+          playerRect.right > gapRect.left &&
+          playerRect.top < gapRect.bottom &&
+          playerRect.bottom > gapRect.top
+        );
+      }
 
 }
 

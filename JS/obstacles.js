@@ -40,7 +40,7 @@ class Obstacles {
        // this.Imgelement1.style.height = `${this.heightEl1}px`;
         this.Imgelement1.style.width = `${this.imagewidth}px`;
 
-        this.Imgelement2.src = "./styles/images/SI_I.png";
+        this.Imgelement2.src = "./styles/images/SI_III.png";
         //this.Imgelement2.style.height = `${this.heightEl2}px`;
         this.Imgelement2.style.width = `${this.imagewidth}px`;
 
@@ -48,7 +48,7 @@ class Obstacles {
         //this.Imgelement3.style.height = `${this.heightEl3}px`;
         this.Imgelement3.style.width = `${this.imagewidth}px`;
 
-        this.Imgelement4.src = "./styles/images/SI_I.png";
+        this.Imgelement4.src = "./styles/images/SI_II.png";
         //this.Imgelement4.style.height = `${this.heightEl4}px`;
         this.Imgelement4.style.width = `${this.imagewidth}px`;
 
